@@ -2,6 +2,11 @@
 
 Single-page portfolio site for **Santhosh Kumar M**.
 
+## About
+- Description: UI/UX designer portfolio with smooth interactions, theme switching, and responsive layout.
+- Website: https://santhosh-seven.vercel.app
+- Topics: `portfolio`, `ui-ux`, `designer`, `responsive-design`, `vercel`
+
 ## Live Website
 - https://santhosh-seven.vercel.app
 
@@ -30,4 +35,3 @@ Then visit `http://localhost:8080`.
 ## Contact
 - Email: `kumarsanthosh2481@gmail.com`
 - LinkedIn: `https://linkedin.com/in/santhosh2994`
-# portfolio-01
