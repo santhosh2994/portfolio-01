@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<meta name="description" content="Portfolio of Santhosh Kumar M, UI/UX Designer focused on crafting intuitive, user-centered digital products."/>
+<meta name="theme-color" content="#D94838"/>
+<meta property="og:title" content="Santhosh Kumar M — UI/UX Designer"/>
+<meta property="og:description" content="Design portfolio featuring selected UI/UX projects, skills, and education."/>
+<meta property="og:type" content="website"/>
+<title>Santhosh Kumar M — UI/UX Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Oswald:wght@300;400;600&family=Space+Mono:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ========== CSS VARIABLES ========== */
+:root {
+  --c-red: #D94838;
+  --font-display: 'Oswald', sans-serif;
+  --font-body: 'Cormorant Garamond', serif;
+  --font-code: 'Space Mono', monospace;
+  --border-width: 1px;
+  --easing: cubic-bezier(0.645,0.045,0.355,1);
+  --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+  --layout-padding: 6vw;
+}
+[data-theme="light"] {
+  --c-cream: #F2EFE9;
+  --c-ink: #1A1A1A;
+  --c-subtle: #8A8A8A;
+  --border-color: rgba(0,0,0,0.1);
+  --border-color-subtle: rgba(0,0,0,0.05);
+  --rail-divider: rgba(0,0,0,0.15);
+  --hero-text: #F2EFE9;
+  --text-primary: #1A1A1A;
+  --text-muted: rgba(26,26,26,0.8);
+}
+[data-theme="dark"] {
+  --c-cream: #121212;
+  --c-ink: #E0E0E0;
+  --c-subtle: #666666;
+  --border-color: rgba(255,255,255,0.1);
+  --border-color-subtle: rgba(255,255,255,0.05);
+  --rail-divider: rgba(255,255,255,0.2);
+  --hero-text: #ffffff;
+  --text-primary: #E0E0E0;
+  --text-muted: rgba(224,224,224,0.8);
+}
+
+/* ========== RESET ========== */
+*, *:before, *:after { box-sizing: border-box; margin: 0; padding: 0; }
+::-webkit-scrollbar { display: none; }
+::selection { background-color: var(--c-red); color: #fff; }
+html { box-sizing: border-box; width: 100%; overflow-x: hidden; }
+body {
+  margin: 0; width: 100%; min-height: 100%;
+  overflow-x: hidden;
+  background-color: var(--c-cream);
+  color: var(--c-ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+  scrollbar-width: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+button { font: inherit; }
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--c-red);
+  outline-offset: 2px;
+}
+a { display: inline-block; text-decoration: none; color: inherit; transition: var(--transition); }
+a:hover { color: var(--c-red); }
+h1,h2,h3,h4,h5,h6 { margin: 0 0 10px 0; font-weight: 600; line-height: 1.1; }
+
+/* ========== HOME LAYOUT ========== */
+.home-layout {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .home-layout {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ========== LEFT RAIL ========== */
+.left-rail {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: 80px;
+  border-right: var(--border-width) solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+  z-index: 100;
+  background: var(--c-cream);
+  transition: background 0.3s;
+}
+@media (max-width: 768px) { .left-rail { display: none; } }
+
+.left-rail .vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: var(--font-code);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  opacity: 0.6;
+}
+.left-rail .social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.left-rail .social-link {
+  writing-mode: vertical-rl;
+  color: var(--c-ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 10px 0;
+  transition: color 0.3s;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+.left-rail .social-link:hover { color: var(--c-red); }
+.left-rail .rail-divider {
+  width: 1px; height: 50px;
+  background: var(--rail-divider);
+  margin: 10px 0;
+}
+.left-rail .email-link {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: var(--c-subtle);
+  transition: color 0.3s;
+}
+.left-rail .email-link:hover { color: var(--c-red); }
+
+/* ========== RIGHT RAIL ========== */
+.right-rail {
+  position: fixed;
+  right: 0; top: 0; bottom: 0;
+  width: 60px;
+  background: var(--c-cream);
+  border-left: var(--border-width) solid var(--border-color);
+  z-index: 100;
+  transition: background 0.3s;
+}
+@media (max-width: 768px) { .right-rail { display: none; } }
+
+.minimap-container {
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.minimap-indicator {
+  width: 4px;
+  height: 0;
+  background: var(--c-red);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  transition: height 0.4s var(--easing), top 0.4s var(--easing);
+}
+
+/* ========== HORIZONTAL SCROLLER ========== */
+.horizontal-scroller {
+  display: flex;
+  width: 200vw;
+  height: 100vh;
+  will-change: transform;
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.horizontal-scroller > * {
+  flex-shrink: 0;
+  width: 100vw;
+  height: 100vh;
+}
+@media (max-width: 768px) {
+  .horizontal-scroller {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    will-change: auto;
+    transform: none !important;
+    transition: none;
+  }
+  .horizontal-scroller > * {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    box-sizing: border-box;
+  }
+}
+
+/* ========== HERO PANEL ========== */
+.hero-panel {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-right: var(--border-width) solid rgba(255,255,255,0.2);
+  background-color: var(--c-red);
+  color: var(--hero-text);
+  padding: var(--layout-padding);
+  padding-left: calc(var(--layout-padding) + 80px);
+  justify-content: space-between;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .hero-panel {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 32px 24px;
+    justify-content: space-between;
+  }
+}
+
+/* Hero meta grid — 2 columns, 2 rows */
+.hero-meta {
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 420px;
+  gap: 0.6rem 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.25);
+  padding-top: 1rem;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .hero-meta {
+    font-size: 0.7rem;
+    max-width: 100%;
+    gap: 0.5rem 1rem;
+  }
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.85;
+  letter-spacing: -2px;
+  margin-top: 2rem;
+  color: var(--hero-text);
+}
+@media (max-width: 768px) {
+  .hero-title { font-size: clamp(2.5rem, 13vw, 4.5rem); letter-spacing: -1px; margin-top: 1.5rem; }
+}
+
+.header-line { display: block; overflow: hidden; height: 1.1em; }
+.header-inner { font-size: 1em; display: block; }
+.header-inner-2 {
+  font-size: 0.65em;
+  font-family: var(--font-body);
+  font-style: italic;
+  display: block;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.hero-subtitle-2 {
+  font-family: var(--font-code);
+  font-size: clamp(0.85rem, 1.5vw, 1.2rem);
+  font-weight: 600;
+  margin-top: 1.5rem;
+  max-width: 700px;
+  opacity: 0.9;
+  color: var(--hero-text);
+  line-height: 1.5;
+}
+@media (max-width: 768px) { .hero-subtitle-2 { margin-top: 1rem; } }
+
+.hero-subtitle {
+  font-family: var(--font-code);
+  font-size: clamp(0.78rem, 1.2vw, 1rem);
+  font-weight: 400;
+  margin-top: 1rem;
+  max-width: 700px;
+  opacity: 0.85;
+  color: var(--hero-text);
+  line-height: 1.7;
+}
+
+/* EST. 2004 chip */
+.hero-est {
+  display: inline-block;
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 3px 10px;
+  margin-top: 1.25rem;
+  border-radius: 2px;
+}
+
+.scroll-hint {
+  font-family: var(--font-code);
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  opacity: 0.5;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+@media (max-width: 768px) { .scroll-hint { font-size: 0.65rem; letter-spacing: 2px; margin-top: 2rem; } }
+
+/* ========== ARTICLE PANEL ========== */
+.article-panel {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: var(--c-cream);
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .article-panel {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    flex-direction: column;
+  }
+}
+
+/* Article Nav */
+.article-nav {
+  width: 320px;
+  min-width: 320px;
+  padding: 60px 30px 60px calc(30px + 80px);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-color);
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+@media (max-width: 1080px) {
+  .article-nav { width: 240px; min-width: 240px; padding-left: calc(20px + 80px); }
+}
+@media (max-width: 768px) { .article-nav { display: none; } }
+
+.back-link {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--c-red);
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+.back-link:hover { opacity: 0.7; color: var(--c-red); }
+
+.article-meta {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--c-subtle);
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+.meta-label { text-transform: uppercase; margin-bottom: 4px; }
+.meta-value { color: var(--c-ink); margin-bottom: 18px; font-size: 0.75rem; }
+
+.toc { list-style: none; margin-top: 30px; padding: 0; }
+.toc-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--c-subtle);
+  text-decoration: none;
+  transition: color 0.3s;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+.toc-item:hover { color: var(--c-ink); }
+.toc-item.active { color: var(--c-ink); }
+.toc-item span { margin-right: 10px; color: var(--c-red); font-weight: 600; }
+
+/* Theme toggle */
+.theme-toggle-wrap {
+  margin-top: auto;
+  padding-top: 30px;
+  display: flex;
+  gap: 8px;
+}
+.theme-toggle-btn {
+  font-family: var(--font-code);
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border: 1px solid var(--border-color);
+  background: none;
+  color: var(--c-subtle);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.theme-toggle-btn.active {
+  background: var(--c-red);
+  border-color: var(--c-red);
+  color: #fff;
+}
+
+/* Content Area */
+.content-area {
+  flex: 1;
+  display: flex;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 60px 0;
+  min-width: 0;
+  -webkit-overflow-scrolling: touch;
+}
+.content-area::-webkit-scrollbar { width: 4px; }
+.content-area::-webkit-scrollbar-track { background: transparent; }
+.content-area::-webkit-scrollbar-thumb { background: var(--c-red); }
+@media (max-width: 768px) {
+  .content-area {
+    padding: 30px 0 60px 0;
+    flex-direction: column;
+    overflow: visible;
+    width: 100%;
+  }
+}
+
+/* Article Column */
+.article-column {
+  flex: 1;
+  padding: 0 50px 80px 50px;
+  min-width: 0;
+  max-width: 780px;
+}
+@media (max-width: 1100px) {
+  .article-column { padding: 0 30px 80px 30px; }
+}
+@media (max-width: 768px) {
+  .article-column {
+    padding: 0 20px 60px 20px;
+    max-width: 100%;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+
+/* Annotations Column */
+.annotations-column {
+  width: 300px;
+  min-width: 300px;
+  padding: 40px 20px 40px 30px;
+  margin-right: 60px;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex-shrink: 0;
+}
+.annotations-column::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 1px;
+  background: var(--border-color);
+}
+@media (max-width: 1200px) { .annotations-column { display: none; } }
+
+.annotation-item {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  line-height: 1.8;
+  color: var(--c-subtle);
+}
+.annotation-item strong {
+  display: block;
+  color: var(--c-red);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.annotation-item blockquote {
+  font-family: var(--font-code);
+  font-size: 0.75rem;
+  font-style: normal;
+  color: var(--c-ink);
+  margin-top: 8px;
+  border-left: 1px solid var(--c-red);
+  padding-left: 15px;
+}
+.annotation-item ul { list-style: none; padding: 0; }
+.annotation-item ul li {
+  padding-left: 12px;
+  position: relative;
+  margin-bottom: 6px;
+}
+.annotation-item ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--c-red);
+}
+
+/* ========== ARTICLE HEADER ========== */
+.article-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  color: var(--text-primary);
+  max-width: 100%;
+  word-break: break-word;
+}
+@media (max-width: 768px) {
+  .article-header h1 { font-size: clamp(1.8rem, 9vw, 2.8rem); margin-bottom: 40px; }
+}
+.article-header .header-line { display: block; overflow: hidden; height: 1.1em; }
+
+/* ========== PORTFOLIO SECTIONS ========== */
+.portfolio-section {
+  font-family: 'Inter', sans-serif;
+  margin: 0 0 70px 0;
+  padding: 0;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .portfolio-section { margin-bottom: 50px; }
+}
+
+.section-label {
+  font-family: var(--font-code);
+  color: var(--c-red);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.section-content {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.section-content p { margin-bottom: 1rem; }
+.section-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0;
+}
+.section-content li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding-left: 1.2rem;
+  position: relative;
+}
+.section-content li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--c-red);
+}
+
+/* ========== PROJECT ITEMS ========== */
+.project-item {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-color-subtle);
+}
+.project-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.4rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) { .item-header { flex-direction: column; gap: 0.2rem; } }
+
+.item-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  transition: color 0.2s;
+  word-break: break-word;
+}
+
+.item-meta {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--c-subtle);
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 768px) { .item-meta { white-space: normal; } }
+
+.item-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--c-red);
+  margin-bottom: 0.75rem;
+}
+
+/* ========== EXPERIENCE / ACCORDION ========== */
+.experience-item {
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--border-color-subtle);
+}
+
+.exp-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  color: inherit;
+  font-family: inherit;
+}
+.exp-toggle:hover .item-title { color: var(--c-red); }
+
+.exp-toggle-icon {
+  font-family: var(--font-code);
+  font-size: 1.2rem;
+  color: var(--c-red);
+  flex-shrink: 0;
+  margin-left: 1rem;
+  transition: transform 0.3s;
+}
+.exp-toggle[aria-expanded="true"] .exp-toggle-icon { transform: rotate(45deg); }
+
+.exp-toggle-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+.exp-toggle-top {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) { .exp-toggle-top { flex-direction: column; gap: 0.15rem; } }
+
+.exp-body {
+  overflow: hidden;
+  height: 0;
+  padding: 0;
+  transition: height 0.4s var(--easing);
+}
+.exp-body.exp-open { padding: 0 0 1.5rem 0; }
+
+/* ========== SKILLS GRID ========== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+@media (max-width: 480px) { .skills-grid { grid-template-columns: 1fr; } }
+
+.skill-category { font-family: 'Inter', sans-serif; }
+.skill-category-title {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--c-red);
+  margin-bottom: 8px;
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-tag {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  border-radius: 2px;
+  letter-spacing: 0.5px;
+}
+
+/* ========== MOBILE BACK BUTTON ========== */
+.mobile-back {
+  display: none;
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: var(--c-red);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-align: left;
+}
+@media (max-width: 768px) { .mobile-back { display: block; } }
+
+
+
+/* ========== CONTACT LINKS ========== */
+.contact-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.contact-link-item {
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 4px;
+  min-width: 0;
+}
+.contact-link-label {
+  font-size: 0.75rem;
+  color: var(--c-red);
+  font-family: var(--font-code);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+@media (max-width: 480px) {
+  .contact-links { flex-direction: column; gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="home-layout" id="homeLayout">
+
+  <!-- LEFT RAIL -->
+  <aside class="left-rail">
+    <div class="vertical-text">Est. 2004</div>
+    <div class="social-links">
+      <a href="https://linkedin.com/in/santhosh2994" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile">LINKEDIN</a>
+      <div class="rail-divider"></div>
+      <a href="mailto:kumarsanthosh2481@gmail.com" class="email-link" aria-label="Send email to kumarsanthosh2481@gmail.com">kumarsanthosh2481@gmail.com</a>
+    </div>
+  </aside>
+
+  <!-- HORIZONTAL SCROLLER -->
+  <div id="scrollContainer" class="horizontal-scroller">
+
+    <!-- HERO PANEL -->
+    <section id="home" class="hero-panel">
+
+      <div class="hero-meta">
+        <span>PORTFOLIO</span>
+        <span>BENGALURU</span>
+        <span id="liveTime">--:-- --</span>
+        <span>UI/UX · PRODUCT</span>
+      </div>
+
+      <div>
+        <h1 class="hero-title">
+          <span class="header-line"><span class="header-inner">Santhosh Kumar M</span></span>
+          <span class="header-line"><span class="header-inner-2">UI/UX Designer</span></span>
+        </h1>
+        <p class="hero-subtitle-2">Designing clarity and delight into products people love.</p>
+        <p class="hero-subtitle">Translating complex requirements into intuitive, user-centered experiences — from research and wireframes to pixel-perfect delivery.</p>
+        <div class="hero-est">Est. 2004</div>
+      </div>
+
+      <button type="button" class="scroll-hint" onclick="goToArticle()">
+        ENTER ↗
+      </button>
+    </section>
+
+    <!-- ARTICLE PANEL -->
+    <section id="article-panel" class="article-panel">
+
+      <!-- Article Nav (desktop sidebar) -->
+      <aside class="article-nav">
+        <a class="back-link" onclick="goToHero(event)" href="#">← Back to Home</a>
+
+        <div class="article-meta">
+          <div class="meta-label">Role</div>
+          <div class="meta-value">UI/UX Designer</div>
+          <div class="meta-label">Location</div>
+          <div class="meta-value">Bengaluru, IN</div>
+          <div class="meta-label">Currently</div>
+          <div class="meta-value">MCA @ Cambridge Institute of Technology</div>
+          <div class="meta-label">Est.</div>
+          <div class="meta-value">2004</div>
+        </div>
+
+        <nav class="toc">
+          <a href="#about" class="toc-item active" onclick="scrollToSection('about', this, event)">
+            <span>01</span> About Me
+          </a>
+          <a href="#projects" class="toc-item" onclick="scrollToSection('projects', this, event)">
+            <span>02</span> Projects
+          </a>
+          <a href="#skills" class="toc-item" onclick="scrollToSection('skills', this, event)">
+            <span>03</span> Skills
+          </a>
+          <a href="#education" class="toc-item" onclick="scrollToSection('education', this, event)">
+            <span>04</span> Education
+          </a>
+        </nav>
+
+        <div class="theme-toggle-wrap">
+          <button class="theme-toggle-btn active" id="lightBtn" onclick="setTheme('light')">Light</button>
+          <button class="theme-toggle-btn" id="darkBtn" onclick="setTheme('dark')">Dark</button>
+        </div>
+      </aside>
+
+      <!-- Content -->
+      <div class="content-area" id="contentArea">
+        <div class="article-column">
+
+          <button class="mobile-back" onclick="goToHero()">← Back to Home</button>
+
+          <!-- Article Header -->
+          <div class="article-header">
+            <h1>
+              <span class="header-line">Designing at the</span>
+              <span class="header-line">Intersection of</span>
+              <span class="header-line" style="color:var(--c-red)">Empathy &amp; Craft</span>
+            </h1>
+          </div>
+
+          <!-- 01 About -->
+          <div class="portfolio-section" id="about">
+            <span class="section-label">01 / Profile</span>
+            <h2 class="section-title">UI/UX Designer who cares about people, pixels, and purpose.</h2>
+            <div class="section-content">
+              <p>I'm Santhosh Kumar M. I design end-to-end user experiences for web and mobile applications — from early research and wireframes to high-fidelity interfaces that developers can implement with pixel-perfect precision.</p>
+              <p>Skilled in Figma, Adobe Creative Suite, and Framer, I translate complex business requirements into intuitive, user-centered solutions. My process is grounded in design thinking — I believe great design is invisible, and great UX feels like common sense.</p>
+              <p>Currently pursuing my MCA at Cambridge Institute of Technology, Bengaluru, with a strong foundation in computer science from Dr. G.R. Damodaran College of Science.</p>
+            </div>
+          </div>
+
+          <!-- 02 Projects -->
+          <div class="portfolio-section" id="projects">
+            <span class="section-label">02 / Selected Projects</span>
+            <h2 class="section-title">Work I'm proud of.</h2>
+
+            <div class="project-item">
+              <div class="item-header">
+                <h3 class="item-title">ATS Resume Creation Dashboard</h3>
+              </div>
+              <div class="item-subtitle">CRM Web UI — UI/UX Designer</div>
+              <div class="section-content">
+                <p>Designed the complete end-to-end experience for a recruiter-focused web application. Created user flows, wireframes, interactive prototypes, and high-fidelity UI designs — translating business and recruiter requirements into simple, intuitive UX solutions aligned with usability and accessibility principles.</p>
+                <ul>
+                  <li>End-to-end UX from discovery to high-fidelity design</li>
+                  <li>User flows, wireframes, and interactive prototypes</li>
+                  <li>Collaborated with developers for pixel-perfect implementation</li>
+                  <li>Iterated designs based on user feedback and usability improvements</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="item-header">
+                <h3 class="item-title">OTT Movie Streaming Platform</h3>
+              </div>
+              <div class="item-subtitle">Web &amp; Mobile — UI/UX Designer</div>
+              <div class="section-content">
+                <p>Designed seamless web and mobile user experiences for browsing and streaming content. Conducted competitor analysis to improve navigation and engagement patterns, and created wireframes and high-fidelity UI screens following modern design standards.</p>
+                <ul>
+                  <li>Competitor analysis to improve navigation patterns</li>
+                  <li>High-fidelity UI screens for web and mobile</li>
+                  <li>Improved user engagement through intuitive interactions</li>
+                  <li>Structured, responsive layouts with consistent visual language</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="item-header">
+                <h3 class="item-title">Food Ordering &amp; Delivery App</h3>
+              </div>
+              <div class="item-subtitle">Mobile Application — UI/UX Designer</div>
+              <div class="section-content">
+                <p>Designed complete user journeys including onboarding, browsing, cart, and checkout flows. Built interactive prototypes to validate design ideas early, focusing on visual hierarchy, consistency, and responsive design.</p>
+                <ul>
+                  <li>Full user journey: onboarding → browse → cart → checkout</li>
+                  <li>Interactive prototypes for design validation</li>
+                  <li>Visual hierarchy and responsive design focus</li>
+                  <li>Iterated UI based on usability testing and feedback</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="item-header">
+                <h3 class="item-title">Fashion E-Commerce Website</h3>
+              </div>
+              <div class="item-subtitle">Web &amp; Mobile — UI/UX Designer</div>
+              <div class="section-content">
+                <p>Designed a modern fashion e-commerce platform focusing on seamless product browsing and shopping experience. Conducted competitor analysis to understand fashion trends and user behaviour, and created wireframes and high-fidelity UI screens following contemporary design principles.</p>
+                <ul>
+                  <li>Competitor analysis to improve user flow and navigation</li>
+                  <li>High-fidelity UI screens for homepage, product listing, and product detail pages</li>
+                  <li>Improved user experience through clean layout and intuitive interactions</li>
+                  <li>Structured, responsive design with consistent visual hierarchy and visual language</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 03 Skills -->
+          <div class="portfolio-section" id="skills">
+            <span class="section-label">03 / Technical Skills</span>
+            <h2 class="section-title">Tools and disciplines I work with.</h2>
+            <div class="skills-grid">
+              <div class="skill-category">
+                <div class="skill-category-title">Design Tools</div>
+                <div class="skill-tags">
+                  <span class="skill-tag">Figma</span>
+                  <span class="skill-tag">Adobe Photoshop</span>
+                  <span class="skill-tag">Adobe Illustrator</span>
+                  <span class="skill-tag">Framer</span>
+                  <span class="skill-tag">Adobe XD</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <div class="skill-category-title">UX Process</div>
+                <div class="skill-tags">
+                  <span class="skill-tag">User Research</span>
+                  <span class="skill-tag">User Flows</span>
+                  <span class="skill-tag">Wireframing</span>
+                  <span class="skill-tag">Prototyping</span>
+                  <span class="skill-tag">Usability Testing</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <div class="skill-category-title">Design Concepts</div>
+                <div class="skill-tags">
+                  <span class="skill-tag">Design Thinking</span>
+                  <span class="skill-tag">Responsive Design</span>
+                  <span class="skill-tag">Accessibility</span>
+                  <span class="skill-tag">Visual Hierarchy</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <div class="skill-category-title">Systems &amp; Platforms</div>
+                <div class="skill-tags">
+                  <span class="skill-tag">UI Kits</span>
+                  <span class="skill-tag">Design Systems</span>
+                  <span class="skill-tag">Reusable Components</span>
+                  <span class="skill-tag">Web</span>
+                  <span class="skill-tag">Mobile</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 04 Education -->
+          <div class="portfolio-section" id="education">
+            <span class="section-label">04 / Education</span>
+            <h2 class="section-title">Where I've studied.</h2>
+
+            <div class="experience-item">
+              <button class="exp-toggle" aria-expanded="true" onclick="toggleExp(this)">
+                <div class="exp-toggle-left">
+                  <div class="exp-toggle-top">
+                    <span class="item-title">Master of Computer Applications</span>
+                    <span class="item-meta">2024 – 2026</span>
+                  </div>
+                  <div class="item-subtitle">Cambridge Institute of Technology, Bengaluru</div>
+                </div>
+                <span class="exp-toggle-icon">+</span>
+              </button>
+              <div class="exp-body exp-open" id="edu0">
+                <div class="section-content">
+                  <p>Specializing in interface design, product thinking, and human-computer interaction alongside computer science foundations. Building on a growing passion for creating meaningful digital experiences.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <button class="exp-toggle" aria-expanded="false" onclick="toggleExp(this)">
+                <div class="exp-toggle-left">
+                  <div class="exp-toggle-top">
+                    <span class="item-title">Bachelor of Computer Science</span>
+                    <span class="item-meta">2021 – 2024</span>
+                  </div>
+                  <div class="item-subtitle">Dr. G.R. Damodaran College of Science, Coimbatore</div>
+                </div>
+                <span class="exp-toggle-icon">+</span>
+              </button>
+              <div class="exp-body" id="edu1">
+                <div class="section-content">
+                  <p>Foundation in computer science fundamentals, with growing interest in user experience and visual design emerging through coursework and independent projects.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <button class="exp-toggle" aria-expanded="false" onclick="toggleExp(this)">
+                <div class="exp-toggle-left">
+                  <div class="exp-toggle-top">
+                    <span class="item-title">Higher Secondary Education</span>
+                    <span class="item-meta">2018 – 2021</span>
+                  </div>
+                  <div class="item-subtitle">TNPL Matric Higher Secondary School, Karur</div>
+                </div>
+                <span class="exp-toggle-icon">+</span>
+              </button>
+              <div class="exp-body" id="edu2">
+                <div class="section-content"><p>Completed higher secondary education with distinction.</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Get in Touch -->
+          <div class="portfolio-section">
+            <span class="section-label">Get In Touch</span>
+            <div class="contact-links">
+              <a href="mailto:kumarsanthosh2481@gmail.com" class="contact-link-item">
+                <div class="contact-link-label">Email</div>
+                <strong>kumarsanthosh2481@gmail.com</strong>
+              </a>
+              <a href="https://linkedin.com/in/santhosh2994" target="_blank" class="contact-link-item">
+                <div class="contact-link-label">LinkedIn</div>
+                <strong>linkedin.com/in/santhosh2994</strong>
+              </a>
+            </div>
+          </div>
+
+        </div><!-- /article-column -->
+
+        <!-- Annotations Column (desktop only) -->
+        <div class="annotations-column">
+          <div class="annotation-item">
+            <strong>Design Ethos</strong>
+            <blockquote>"I design at the intersection of empathy and precision — turning complex problems into experiences that feel effortless."</blockquote>
+          </div>
+          <div class="annotation-item">
+            <strong>Currently</strong>
+            Designing user-centered experiences and building expertise in product design. Pursuing MCA at Cambridge Institute of Technology.
+          </div>
+          <div class="annotation-item">
+            <strong>Soft Skills</strong>
+            <ul>
+              <li>Creativity &amp; attention to detail</li>
+              <li>Cross-functional collaboration</li>
+              <li>Structured problem-solving</li>
+              <li>Time management &amp; adaptability</li>
+            </ul>
+          </div>
+          <div class="annotation-item">
+            <strong>Contact</strong>
+            <div>+91 9361334878</div>
+            <div>kumarsanthosh2481@gmail.com</div>
+          </div>
+        </div>
+
+      </div><!-- /content-area -->
+    </section>
+
+  </div><!-- /horizontal-scroller -->
+
+  <!-- RIGHT RAIL -->
+  <aside class="right-rail">
+    <div class="minimap-container">
+      <div class="minimap-indicator" id="minimapIndicator"></div>
+    </div>
+  </aside>
+
+</div><!-- /home-layout -->
+
+<script>
+// ===== PANEL TRACKING =====
+let currentPanel = 0;
+
+function goToArticle() {
+  currentPanel = 1;
+  updateScroller();
+}
+
+function goToHero(evt) {
+  if (evt) evt.preventDefault();
+  currentPanel = 0;
+  updateScroller();
+}
+
+function updateScroller() {
+  const scroller = document.getElementById('scrollContainer');
+  const isMobile = window.innerWidth <= 768;
+  if (!isMobile) {
+    scroller.style.transform = currentPanel === 1 ? 'translateX(-100vw)' : 'translateX(0)';
+  }
+  const indicator = document.getElementById('minimapIndicator');
+  if (currentPanel === 0) {
+    indicator.style.top = '20%';
+    indicator.style.height = '20%';
+  } else {
+    indicator.style.top = '50%';
+    indicator.style.height = '30%';
+  }
+}
+updateScroller();
+
+// ===== WHEEL NAVIGATION =====
+let wheelLocked = false;
+document.getElementById('homeLayout').addEventListener('wheel', (e) => {
+  const isMobile = window.innerWidth <= 768;
+  if (isMobile) return;
+
+  if (currentPanel === 1) {
+    const ca = document.getElementById('contentArea');
+    const atTop = ca.scrollTop <= 0;
+    if (e.deltaY < 0 && atTop && !wheelLocked) {
+      wheelLocked = true;
+      goToHero();
+      setTimeout(() => { wheelLocked = false; }, 1000);
+    }
+    return;
+  }
+
+  if (wheelLocked) return;
+  if (Math.abs(e.deltaY) < 20 && Math.abs(e.deltaX) < 20) return;
+
+  wheelLocked = true;
+  if (e.deltaY > 0 || e.deltaX > 0) {
+    goToArticle();
+  } else {
+    goToHero();
+  }
+  setTimeout(() => { wheelLocked = false; }, 900);
+}, { passive: true });
+
+// ===== TOUCH SWIPE =====
+let touchStartX = 0, touchStartY = 0;
+document.getElementById('homeLayout').addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+document.getElementById('homeLayout').addEventListener('touchend', (e) => {
+  const isMobile = window.innerWidth <= 768;
+  if (isMobile) return;
+  const dx = touchStartX - e.changedTouches[0].clientX;
+  const dy = touchStartY - e.changedTouches[0].clientY;
+  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+    if (dx > 0) goToArticle(); else goToHero();
+  }
+}, { passive: true });
+
+// ===== LIVE CLOCK (IST) =====
+function updateTime() {
+  const now = new Date();
+  const ist = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+  let h = ist.getHours();
+  const m = String(ist.getMinutes()).padStart(2, '0');
+  const s = String(ist.getSeconds()).padStart(2, '0');
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  h = h % 12 || 12;
+  const timeStr = `${h}:${m}:${s} ${ampm} IST`;
+  const el = document.getElementById('liveTime');
+  if (el) el.textContent = timeStr;
+}
+updateTime();
+setInterval(updateTime, 1000);
+
+// ===== ACCORDION =====
+function toggleExp(btn) {
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', !expanded);
+  const body = btn.nextElementSibling;
+  if (!expanded) {
+    body.classList.add('exp-open');
+    body.style.height = body.scrollHeight + 'px';
+    setTimeout(() => { body.style.height = 'auto'; }, 400);
+  } else {
+    body.style.height = body.scrollHeight + 'px';
+    requestAnimationFrame(() => {
+      body.style.height = '0';
+      body.classList.remove('exp-open');
+    });
+  }
+}
+
+// Init open accordion heights
+document.querySelectorAll('.exp-body.exp-open').forEach(b => {
+  b.style.height = 'auto';
+});
+
+// ===== TOC SCROLL =====
+function scrollToSection(id, el, evt) {
+  if (evt) evt.preventDefault();
+  if (currentPanel === 0) goToArticle();
+  setTimeout(() => {
+    const target = document.getElementById(id);
+    const ca = document.getElementById('contentArea');
+    if (target && ca) ca.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
+  }, currentPanel === 0 ? 700 : 0);
+  document.querySelectorAll('.toc-item').forEach(i => i.classList.remove('active'));
+  if (el) el.classList.add('active');
+}
+
+// TOC active state on content scroll
+document.getElementById('contentArea').addEventListener('scroll', () => {
+  const ca = document.getElementById('contentArea');
+  const sections = ['about','projects','skills','education'];
+  const tocItems = document.querySelectorAll('.toc-item');
+  let current = 'about';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.offsetTop - 100 <= ca.scrollTop) current = id;
+  });
+  tocItems.forEach(item => {
+    const href = item.getAttribute('href').replace('#','');
+    item.classList.toggle('active', href === current);
+  });
+});
+
+// ===== THEME =====
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  document.getElementById('lightBtn').classList.toggle('active', theme === 'light');
+  document.getElementById('darkBtn').classList.toggle('active', theme === 'dark');
+  localStorage.setItem('sk-theme', theme);
+}
+
+// Load saved theme
+(function() {
+  const saved = localStorage.getItem('sk-theme');
+  if (saved) setTheme(saved);
+})();
+
+// Handle resize — reset transform on desktop/mobile switch
+window.addEventListener('resize', () => {
+  const isMobile = window.innerWidth <= 768;
+  const scroller = document.getElementById('scrollContainer');
+  if (isMobile) {
+    scroller.style.transform = 'none';
+  } else {
+    scroller.style.transform = currentPanel === 1 ? 'translateX(-100vw)' : 'translateX(0)';
+  }
+});
+
+// Keyboard navigation
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') goToArticle();
+  if (e.key === 'ArrowLeft') goToHero();
+});
+</script>
+</body>
+</html>
