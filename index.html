@@ -262,20 +262,29 @@ h1,h2,h3,h4,h5,h6 { margin: 0 0 10px 0; font-weight: 600; line-height: 1.1; }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 10vw, 8rem);
+  font-size: clamp(2.4rem, 8vw, 7rem);
   font-weight: 400;
   text-transform: uppercase;
-  line-height: 0.85;
-  letter-spacing: -2px;
+  line-height: 0.92;
+  letter-spacing: -1.5px;
   margin-top: 2rem;
   color: var(--hero-text);
+  max-width: 100%;
 }
 @media (max-width: 768px) {
   .hero-title { font-size: clamp(2.5rem, 13vw, 4.5rem); letter-spacing: -1px; margin-top: 1.5rem; }
 }
 
 .header-line { display: block; overflow: hidden; height: 1.1em; }
-.header-inner { font-size: 1em; display: block; }
+.hero-title .header-line {
+  height: auto;
+  overflow: visible;
+}
+.header-inner {
+  font-size: 1em;
+  display: inline-block;
+  white-space: nowrap;
+}
 .header-inner-2 {
   font-size: 0.65em;
   font-family: var(--font-body);
